@@ -1,12 +1,9 @@
 
-# coding: utf-8
-
-# In[ ]:
-
-
 #import all package
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
 from sklearn import linear_model
 from pandas.plotting import scatter_matrix
 from sklearn.model_selection import train_test_split
@@ -52,5 +49,5 @@ def lassoreg(Descriptors):
     error.set_ylabel('error')
     error.set_legend(loc=1)
     error.set_title('error vs $\lambda$')
-return fig
+    return fig
 
