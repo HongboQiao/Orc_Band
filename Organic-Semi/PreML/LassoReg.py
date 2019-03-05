@@ -28,12 +28,12 @@ def lassoreg(Descriptors):
     # loop over lambda values (strength of regularization)
     for k in lambdas:
         model.set_params(alpha=k,max_iter=1e6)
-        model.fit(train_normalized[train.columns.values[2:16]],train_normalized[train.columns.values[1]])
+        model.fit(train_normalized[train.columns.values[2:15]],train_normalized[train.columns.values[1]])
         coefs.append(model.coef_)
         trainerror.append(mean_squared_error(train_normalized[train.columns.values[1]],model.predict(
-        train_normalized[train.columns.values[2:16]])))
+        train_normalized[train.columns.values[2:15]])))
         testerror.append(mean_squared_error(test_normalized[train.columns.values[1]],model.predict(
-        test_normalized[train.columns.values[2:16]])))
+        test_normalized[train.columns.values[2:15]])))
     fig = plt.figure(figsize=(10,3))
     RR_coefs = fig.add_subplot(121)
     plt.plot(lambdas,coefs)
