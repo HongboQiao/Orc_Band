@@ -3,7 +3,6 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-%matplotlib inline
 from sklearn import linear_model
 from pandas.plotting import scatter_matrix
 from sklearn.model_selection import train_test_split
@@ -35,7 +34,7 @@ def lassoreg(Descriptors):
         testerror.append(mean_squared_error(test_normalized[train.columns.values[1]],model.predict(
         test_normalized[train.columns.values[2:15]])))
     fig = plt.figure(figsize=(10,3))
-    RR_coefs = fig.add_subplot(121)
+    RR_coef = fig.add_subplot(121)
     plt.plot(lambdas,coefs)
     RR_coef.set_xscale('log')
     RR_coef.set_xlabel('$\lambda$')
@@ -47,7 +46,7 @@ def lassoreg(Descriptors):
     error.set_xscale('log')
     error.set_xlabel('$\lambda$')
     error.set_ylabel('error')
-    error.set_legend(loc=1)
+    error.set.legend(loc=1)
     error.set_title('error vs $\lambda$')
     return fig
 
