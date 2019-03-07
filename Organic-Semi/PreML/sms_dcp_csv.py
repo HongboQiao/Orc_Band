@@ -4,8 +4,11 @@ from multiprocessing import freeze_support
 from rdkit import Chem
 from mordred import Calculator, descriptors
 
+
 def sms_dcp(data):
-    """This is a function to output the descriptors which has more than 0.65 correlation with bandgap"""
+    """This is a function to output the descriptors
+        which has more than 0.65 correlation with bandgap"""
+
     SMLSTR_Data = np.array(data['SMILES_str'])
     # Transfer array to list
     SMLSTR_Data = SMLSTR_Data.tolist()
@@ -25,7 +28,7 @@ def sms_dcp(data):
 
     Correlation_BG = raw_data.corr()
     # Save as DataFrame
-    Correlation_BG = pd.DataFrame( data = Correlation_BG)
+    Correlation_BG = pd.DataFrame(data=Correlation_BG)
     # Create a DataFrame
     DCPdata = pd.DataFrame()
 
