@@ -46,7 +46,7 @@ def lassoreg(Descriptors):
     error.set_xscale('log')
     error.set_xlabel('$\lambda$')
     error.set_ylabel('error')
-    error.set.legend(loc=1)
+    error.legend(loc=1)
     error.set_title('error vs $\lambda$')
-    return fig
+    return
 
