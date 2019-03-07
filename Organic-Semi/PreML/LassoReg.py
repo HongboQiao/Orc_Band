@@ -21,8 +21,8 @@ def lassoreg(Descriptors):
     trainerror = []
     testerror = []
 
-    lambdas = np.logspace(-8,1,200)
-    model=linear_model.Lasso()
+    lambdas = np.logspace(-8,1,200) # Define lambda, May change
+    model=linear_model.Lasso() 
 
     # loop over lambda values (strength of regularization)
     for k in lambdas:
@@ -33,6 +33,8 @@ def lassoreg(Descriptors):
         train_normalized[train.columns.values[2:15]])))
         testerror.append(mean_squared_error(test_normalized[train.columns.values[1]],model.predict(
         test_normalized[train.columns.values[2:15]])))
+
+    # Plot The Fiigure
     fig = plt.figure(figsize=(10,3))
     RR_coef = fig.add_subplot(121)
     plt.plot(lambdas,coefs)
@@ -40,6 +42,7 @@ def lassoreg(Descriptors):
     RR_coef.set_xlabel('$\lambda$')
     RR_coef.set_ylabel('$coefs$')
     RR_coef.set_title('RR coefs vs $\lambda$')
+
     error = fig.add_subplot(122)
     plt.plot(lambdas,trainerror,label='train error')
     plt.plot(lambdas,testerror,label='test error')
