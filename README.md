@@ -28,16 +28,18 @@ from sklearn.ensemble import RandomForestRegressor
 ```
 75% of the data are used to train the model and 25% are used to test the model. The score of this model is 0.69 and the SSR is 130.36.
 #### Neural Network
-Import Linear Regression by using
+Import Keras by using
 ```
-from sklearn.linear_model import LinearRegression
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.wrappers.scikit_learn import KerasRegressor
 ```
 75% of the data are used to train the model and 25% are used to test the model. The SSR is 488.88.
 
 #### Prediction Model
 The Scatter Figure of the Predicted Bandgap for 4 Models are as follows.    
 ![Prediction Models](https://github.com/HongboQiao/Organic-Semi/blob/master/Organic-Semi/Documents/4ModelPlot.png)   
-Therefore, we choose the Random Forest Regression as our Prediction Model.
+Therefore, we choose the Random Forest Regression as our Prediction Model.  
 (Pending)
 ## Package Needed
 ### Rdkit - Calculate the descriptors
