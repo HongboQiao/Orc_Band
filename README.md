@@ -6,10 +6,39 @@ Our overall goal of the project is to predict the bandgap and bandgap position o
 (Pending...)
 ### Calculation by RDkit
 RDkit is a very useful and opensource package which can be download very easily. By using the map calculation in the package, we can easily get thousands of descriptors from the SMILES strings. And use LASSO to screen the predictors.
-       
+
 (Pending...)
 ### Machine Learning Model
-(Pending...)
+#### Multiple Linear Regression
+Import Linear Regression by using
+```
+from sklearn.linear_model import LinearRegression
+```
+75% of the data are used to train the model and 25% are used to test the model. The score of this model is 0.59 and the SSR is 461.51.
+#### Polynominal Regression
+Import Polynominal Regression by using
+```
+from sklearn.preprocessing import PolynomialFeatures
+```
+75% of the data are used to train the model and 25% are used to test the model. The SSR is 462.96.
+#### Random Forest regression
+Import Random Forest Regression by using
+```
+from sklearn.ensemble import RandomForestRegressor
+```
+75% of the data are used to train the model and 25% are used to test the model. The score of this model is 0.69 and the SSR is 130.36.
+#### Neural Network
+Import Linear Regression by using
+```
+from sklearn.linear_model import LinearRegression
+```
+75% of the data are used to train the model and 25% are used to test the model. The SSR is 488.88.
+
+#### Prediction Model
+The Scatter Figure of the Predicted Bandgap for 4 Models are as follows.  
+![Prediction Models](https://github.com/HongboQiao/Organic-Semi/blob/master/Organic-Semi/Documents/4ModelPlot.png)
+Therefore, we choose the Random Forest Regression as our Prediction Model.
+(Pending)
 ## Package Needed
 ### Rdkit - Calculate the descriptors
 There are tow ways to install this package.
