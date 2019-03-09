@@ -21,12 +21,12 @@ def lassoreg(Descriptors):
     trainerror = []
     testerror = []
 
-    lambdas = np.logspace(-8,1,200) # Define lambda, May change
+    lambdas = np.logspace(-8,1,100) # Define lambda, May change
     model=linear_model.Lasso() 
 
     # loop over lambda values (strength of regularization)
     for k in lambdas:
-        model.set_params(alpha=k,max_iter=1e6)
+        model.set_params(alpha=k,max_iter=1e7)
         model.fit(train_normalized[train.columns.values[2:15]],train_normalized[train.columns.values[1]])
         coefs.append(model.coef_)
         trainerror.append(mean_squared_error(train_normalized[train.columns.values[1]],model.predict(
@@ -36,19 +36,20 @@ def lassoreg(Descriptors):
 
     # Plot The Fiigure
     fig = plt.figure(figsize=(10,3))
-    RR_coef = fig.add_subplot(121)
+    plt.subplot(121)
     plt.plot(lambdas,coefs)
-    RR_coef.set_xscale('log')
-    RR_coef.set_xlabel('$\lambda$')
-    RR_coef.set_ylabel('$coefs$')
-    RR_coef.set_title('RR coefs vs $\lambda$')
+    plt.xscale('log')
+    plt.xlabel('$\lambda$')
+    plt.ylabel('$coefs$')
+    plt.title('RR coefs vs $\lambda$')
 
-    error = fig.add_subplot(122)
+    plt.subplot(122)
     plt.plot(lambdas,trainerror,label='train error')
     plt.plot(lambdas,testerror,label='test error')
-    error.set_xscale('log')
-    error.set_xlabel('$\lambda$')
-    error.set_ylabel('error')
-    error.set.legend(loc=1)
-    error.set_title('error vs $\lambda$')
-    return fig
+    plt.xscale('log')
+    plt.xlabel('$\lambda$')
+    plt.ylabel('error')
+    plt.legend(loc=1)
+    plt.title('error vs $\lambda$')
+    return
+   
