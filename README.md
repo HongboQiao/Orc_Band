@@ -35,8 +35,8 @@ from sklearn.linear_model import LinearRegression
 75% of the data are used to train the model and 25% are used to test the model. The SSR is 488.88.
 
 #### Prediction Model
-The Scatter Figure of the Predicted Bandgap for 4 Models are as follows.  
-![Prediction Models](https://github.com/HongboQiao/Organic-Semi/blob/master/Organic-Semi/Documents/4ModelPlot.png)
+The Scatter Figure of the Predicted Bandgap for 4 Models are as follows.    
+![Prediction Models](https://github.com/HongboQiao/Organic-Semi/blob/master/Organic-Semi/Documents/4ModelPlot.png)   
 Therefore, we choose the Random Forest Regression as our Prediction Model.
 (Pending)
 ## Package Needed
