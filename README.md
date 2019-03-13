@@ -87,7 +87,7 @@ Organic-Semi/
         tests/
         Document/
     README.md
-    Environmentpy36.yml
+    keras1_0.yml
     LICENSE
     setup.py
 ```
