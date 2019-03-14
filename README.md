@@ -1,4 +1,4 @@
-# Orc Band! ![LOGO](https://github.com/HongboQiao/Organic-Semi/blob/master/Organic-Semi/Documents/Logo%20square.jpg)
+# Orc Band! ![LOGO](https://github.com/HongboQiao/Organic-Semi/blob/master/Organic-Semi/Documents/Logo%20square.jpg =128x128)
  
 ## Project Introduction
 Our overall goal of the project is to predict the bandgap and bandgap position of the organic semiconductors, by using the Machine Leaning Model. And the data we use is from Harvard Clean Energy Project Database. We focus on using rdkit to calculate the fundamental properties for organic semiconductor from SMILES strings, and use LASSO regression to select the predictors for machine learning.
