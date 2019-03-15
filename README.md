@@ -3,7 +3,11 @@
 <div align=center> <img src="https://github.com/HongboQiao/Organic-Semi/blob/master/Organic-Semi/Documents/Logo%20square.jpg" width="400"> </div>
 
 ## Project Introduction
-Our overall goal of the project is to predict the bandgap and bandgap position of the organic semiconductors, by using the Machine Leaning Model. And the data we use is from Harvard Clean Energy Project Database. We focus on using rdkit to calculate the fundamental properties for organic semiconductor from SMILES strings, and use LASSO regression to select the predictors for machine learning.
+Our overall goal of the project is to predict the bandgap and bandgap position of the organic semiconductors, by using Machine Leaning Method. The dataset that we use is Harvard Clean Energy Project Database. To achieve this goal, Our tasks are: 
+1. Calculate molecular descriptors for organic semiconductor from SMILES strings;
+2. Determine predictors for mathine learning mehthod by LASSO regression;
+3. Screen and optimization of regression model;
+4. Build a wrapping function that help user to use our model
 
 (Pending...)
 ### Calculation by RDkit
