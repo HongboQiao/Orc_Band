@@ -49,8 +49,8 @@ The Scatter Figure of the Predicted Bandgap for 4 Models are as follows.
 <img src="https://github.com/HongboQiao/Organic-Semi/blob/master/Organic-Semi/Documents/Image/Model_Comparison.png" width="700">
 </div>
 The calculated statistic data are as follows:
+  
 <br>
-<div align=center>
 
 | Error | Multiple Linear | Random Forest | Polynomial  | Neural Network |
 | :---: | :-------------: | :-----------: | :---------: | :------------: |
@@ -60,7 +60,6 @@ The calculated statistic data are as follows:
 | $R^2$ | 0.5933     | 0.6772   | 0.5458 | 0.5665    |
 | Kfold | 0.5906     | 0.6819   | 0.5906 | -0.0620   |
 
-</div>
 
 According to the figure and the table above, we choose the Random Forest Regression as our Prediction Model. And by optimizing it, we have a really good model which has $R^2=0.80$.
 
@@ -121,9 +120,8 @@ Orc_Band/
           /notebook
         tests/
         Document/
-          /
-          /
-          /
+          /Image
+          /Data
     README.md
     UseCase.ipynb
     keras1_0.yml
