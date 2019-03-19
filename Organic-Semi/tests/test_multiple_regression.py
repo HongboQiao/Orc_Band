@@ -20,3 +20,9 @@ def test_Random_Forest_Model():
     score2 = MLModels.Random_Forest_Model(data)
     assert score2 > 0.7, "should be larger than 0.7"
     return
+
+def test_Neural_Network_Model():
+    data = pd.read_csv('../PreML/DescriptorsDataset.csv')
+    score3 = MLModels.Neural_Network_Model(data)
+    assert score3 < 0.6, "should be about 0.56"
+    return
