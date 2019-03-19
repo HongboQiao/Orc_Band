@@ -14,7 +14,7 @@ from sklearn.datasets import load_digits
 from sklearn.ensemble import RandomForestClassifier
 
 def search_hyperparameter():
-    data = pd.read_csv('../PreML/DescriptorsDataset.csv')
+    data = pd.read_csv('../../Documents/Data/DescriptorsDataset.csv')
     X = data[['AXp-0d', 'AXp-1d', 'AXp-2d', 'ETA_eta_L', 'ETA_epsilon_3']].values
     y = data[['e_gap_alpha']].values
     X_train, X_test, y_train, y_test = train_test_split(X, y.ravel(), test_size = .25, random_state=1234)
