@@ -15,7 +15,7 @@ from keras.models import Sequential
 from keras.layers import Dense
 from keras.wrappers.scikit_learn import KerasRegressor
 from keras import regularizers
-from evaluate import r2_score
+from Evaluation import r2_score
 
 
 def Multiple_Linear_Model(data):
