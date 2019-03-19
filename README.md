@@ -61,7 +61,7 @@ The calculated statistic data are as follows:
 | Kfold | 0.5906     | 0.6819   | 0.5906 | -0.0620   |
 
 
-According to the figure and the table above, we choose the Random Forest Regression as our Prediction Model. And by optimizing it, we have a really good model which has $R^2=0.80$.(For 
+According to the figure and the table above, we choose the Random Forest Regression as our Prediction Model. And by optimizing it, we have a really good model, which has $R^2=0.80$. (For whole data set)
 
 <div align=center>
 <img src="https://github.com/HongboQiao/Organic-Semi/blob/master/Organic-Semi/Documents/Image/Optimized_Random_Forest.png" width="300">
