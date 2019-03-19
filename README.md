@@ -1,6 +1,6 @@
 # Orc Band!
 
-<div align=center> <img src="https://github.com/HongboQiao/Organic-Semi/blob/master/Organic-Semi/Documents/Image/Logo.jpg" width="400"> </div>
+<div align=center> <img src="https://github.com/HongboQiao/Orc_Band/blob/master/documentation/image/Logo.jpg" width="400"> </div>
 
 ## Project Introduction
 Our overall goal of the project is to predict the bandgap and bandgap position of the organic semiconductors, by using Machine Leaning Method. The dataset that we use is Harvard Clean Energy Project Database. To achieve this goal, Our tasks are:
@@ -46,7 +46,7 @@ The score of this model is 0.57.
 #### Prediction Model
 The Scatter Figure of the Predicted Bandgap for 4 Models are as follows.
 <div align=center>
-<img src="https://github.com/HongboQiao/Organic-Semi/blob/master/Organic-Semi/Documents/Image/Model_Comparison.png" width="700">
+<img src="https://github.com/HongboQiao/Orc_Band/blob/master/documentation/image/Model_Comparison.png" width="700">
 </div>
 The calculated statistic data are as follows:
   
@@ -64,7 +64,7 @@ The calculated statistic data are as follows:
 According to the figure and the table above, we choose the Random Forest Regression as our Prediction Model. And by optimizing it, we have a really good model, which has $R^2=0.80$. (For whole data set)
 
 <div align=center>
-<img src="https://github.com/HongboQiao/Organic-Semi/blob/master/Organic-Semi/Documents/Image/Optimized_Random_Forest.png" width="300">
+<img src="https://github.com/HongboQiao/Orc_Band/blob/master/documentation/image/Optimized_Random_Forest.png" width="300">
 </div>
 
 ## Package Needed
