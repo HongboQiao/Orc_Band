@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
-from Evaluation import r2_score
+from evaluation import r2_score
 
 def Polynomial_Model(data):
     """Model for Polynomial Regression Model"""
