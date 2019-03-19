@@ -6,7 +6,7 @@ from sklearn.metrics import mean_squared_error
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
-from evaluate import r2_score
+from Evaluation import r2_score
 
 def Random_Forest_Reg(data):
     #import data
