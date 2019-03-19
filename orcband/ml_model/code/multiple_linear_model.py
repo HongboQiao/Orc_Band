@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LinearRegression
-from Evaluation import r2_score
+from evaluation import r2_score
 
 
 def Multiple_Linear_Model(data):
