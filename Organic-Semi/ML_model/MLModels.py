@@ -15,6 +15,7 @@ from keras.models import Sequential
 from keras.layers import Dense
 from keras.wrappers.scikit_learn import KerasRegressor
 from keras import regularizers
+from evaluate import r2_score
 
 
 def Multiple_Linear_Model(data):
@@ -31,6 +32,7 @@ def Multiple_Linear_Model(data):
     MLR.fit(X_train,Y_train)
     Test_Predictions = MLR.predict(X_test)
     Train_Predictions = MLR.predict(X_train)
+    MLRscore = r2_score(Y_test,Test_Predictions)
 
     # Plot the figure
     figure = plt.figure()
@@ -41,10 +43,11 @@ def Multiple_Linear_Model(data):
     plt.xlabel('Actual BandGap')
     plt.ylabel('Predicted BandGap')
     plt.show()
+    
 
     print('The score of this regression in this case is: ',
-           MLR.score(X_test,Y_test))
-    return figure
+           MLRscore)
+    return MLRscore
 
 
 def Polynomial_Model(data):
@@ -67,6 +70,7 @@ def Polynomial_Model(data):
     L_R.fit(X_poly, Y_train)
     Ytrain_Pred = L_R.predict(Poly_Reg.fit_transform(X_train))
     Ytest_Pred = L_R.predict(Poly_Reg.fit_transform(X_test))
+    PLMscore = r2_score(Y_test,Ytest_Pred)
 
     # Figure
     figure = plt.figure()
@@ -77,8 +81,10 @@ def Polynomial_Model(data):
     plt.xlabel('Actual BandGap')
     plt.ylabel('Predicted BandGap')
     plt.show()
+    print('The score of this regression in this case is: ',
+           PLMscore)
 
-    return figure
+    return PLMscore
 
 
 def Random_Forest_Model(data): # Pending
@@ -91,11 +97,12 @@ def Random_Forest_Model(data): # Pending
                                         X, Y, test_size = .25, random_state=1234)
 
     # Model
-    regressor = RandomForestRegressor(n_estimators = 300, random_state = 0)
+    regressor = RandomForestRegressor(n_estimators = 300, random_state = 0, min_samples_split=15)
     regressor.fit(X_train,Y_train)
 
     Ytrain_Pred = regressor.predict(X_train)
     Ytest_Pred = regressor.predict(X_test)
+    RFMscore = r2_score(Y_test,Ytest_Pred)
 
     # Figure
     figure = plt.figure()
@@ -109,22 +116,10 @@ def Random_Forest_Model(data): # Pending
 
     # Score of the Model
     print('The score of this regression in this case is: ',
-          regressor.score(X_test,Y_test))
+          RFMscore)
 
-    return figure
+    return RFMscore
 
-def neural_model():
-    """Submodel of Neural Network Model"""
-    # assemble the structure
-    model = Sequential()
-    model.add(Dense(5, input_dim = 5, kernel_initializer = 'normal',
-                 activation='relu', kernel_regularizer = regularizers.l2(0.01)))
-    model.add(Dense(8, kernel_initializer = 'normal', activation='relu',
-                 kernel_regularizer = regularizers.l2(0.01)))
-    model.add(Dense(1, kernel_initializer = 'normal'))
-    # compile the model
-    model.compile(loss = 'mean_squared_error', optimizer = 'adam')
-    return model
 
 def Neural_Network_Model(data): #TensorFlow Needed
     """Model for Random Forest Model"""
@@ -134,6 +129,18 @@ def Neural_Network_Model(data): #TensorFlow Needed
     Y = data[['e_gap_alpha']].values
     X_train, X_test, Y_train, Y_test = train_test_split(
                                        X, Y, test_size = .25, random_state=1234)
+    def neural_model():
+        """Submodel of Neural Network Model"""
+        # assemble the structure
+        model = Sequential()
+        model.add(Dense(5, input_dim = 5, kernel_initializer = 'normal',
+                 activation='relu', kernel_regularizer = regularizers.l2(0.01)))
+        model.add(Dense(8, kernel_initializer = 'normal', activation='relu',
+                 kernel_regularizer = regularizers.l2(0.01)))
+        model.add(Dense(1, kernel_initializer = 'normal'))
+    # compile the model
+        model.compile(loss = 'mean_squared_error', optimizer = 'adam')
+        return model
 
     # Model
     estimator = KerasRegressor(build_fn = neural_model,
@@ -141,6 +148,7 @@ def Neural_Network_Model(data): #TensorFlow Needed
     history = estimator.fit(X_train, Y_train, validation_split = 0.33,
                             epochs = 1200, batch_size = 10000, verbose = 0)
     prediction = estimator.predict(X_test)
+    NNMscore = r2_score(Y_test,prediction)
 
     # Figure
     figure = plt.figure()
@@ -149,5 +157,7 @@ def Neural_Network_Model(data): #TensorFlow Needed
     plt.xlim(0,4)
     plt.ylim(0,4)
     plt.plot([0,4], [0,4], lw = 4, color='black')
+    print('The score of this regression in this case is: ',
+          NNMscore)
 
-    return figure # Picture Varies every time
+    return NNMscore # Picture Varies every time
