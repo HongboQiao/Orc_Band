@@ -111,17 +111,17 @@ Keras is a high-level neural networks API, you can find the infomation [here](ht
 Our main work can be divided for 3 parts: PreML(Data Mining and Cleaning), ML_Model(Machine Learning Models), test(All test file). For each directory, we seperate the file into code(".py") and notebook(".ipynb", as a usecase for the ".py" file). 
 ```
 Orc_Band/
-    Organic-Semi/
-        PreML/
-          /code
-          /notebook
-        ML_model/
-          /code
-          /notebook
+    orcband/
+        datamining/
+            code/
+            notebook/
+        ml_model/
+            code/
+            notebook/
         tests/
-        Document/
-          /Image
-          /Data
+    documentation/
+        image/
+        data/
     README.md
     UseCase.ipynb
     keras1_0.yml
