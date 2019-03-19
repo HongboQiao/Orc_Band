@@ -2,9 +2,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def datadistribution():
+def datadistribution(data):
     """This function is used to plot the distribution of bandgap dataset"""
-    data = pd.read_csv('C:../../../DCPdata100K.csv')
     plt.figure(figsize=(8,6))
     plt.hist(data['e_gap_alpha'],rwidth=0.9,bins=20)
     plt.xlabel('$<E_g> \ [eV]$',fontsize=18)
