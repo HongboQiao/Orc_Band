@@ -9,11 +9,9 @@ Our overall goal of the project is to predict the bandgap and bandgap position o
 3. Screen and optimization of regression model;
 4. Build a wrapping function that help user to use our model
 
-(Pending...)
 ### Calculation by RDkit
 RDkit is a very useful and opensource package which can be download very easily. By using the map calculation in the package, we can easily get thousands of descriptors from the SMILES strings. And use LASSO to screen the predictors.
 
-(Pending...)
 ### Machine Learning Model
 #### Multiple Linear Regression
 Import Linear Regression by using
