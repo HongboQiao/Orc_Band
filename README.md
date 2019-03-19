@@ -46,7 +46,7 @@ The score of this model is 0.57.
 #### Prediction Model
 The Scatter Figure of the Predicted Bandgap for 4 Models are as follows.
 <div align=center>
-<img src="https://github.com/HongboQiao/Organic-Semi/blob/master/Organic-Semi/Documents/Models_Comparison/Model_Comparison.png" width="300">
+<img src="https://github.com/HongboQiao/Organic-Semi/blob/master/Organic-Semi/Documents/Models_Comparison/Model_Comparison.png" width="600">
 </div>
 The calculated statistic data are as follows:
 
