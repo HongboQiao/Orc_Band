@@ -109,7 +109,7 @@ Here is the link for [scikit-learn](https://scikit-learn.org/stable/install.html
 Keras is a high-level neural networks API, you can find the infomation [here](https://keras.io/). Since the introduction on their website is very straight forward, we don't write it here.
 
 ## Github Organization
-Our main work can be divided for 3 parts: PreML(Data Mining and Cleaning), ML_Model(Machine Learning Models), test(All test file). For each directory, we seperate the file into code(".py") and notebook(".ipynb", as a usecase for the ".py" file).
+Our main work can be divided for 3 parts: PreML(Data Mining and Cleaning), ML_Model(Machine Learning Models), test(All test file). For each directory, we seperate the file into code(".py") and notebook(".ipynb", as a usecase for the ".py" file). 
 ```
 Orc_Band/
     Organic-Semi/
@@ -130,3 +130,5 @@ Orc_Band/
     LICENSE
     setup.py
 ```
+  
+  *Note: The data we use is confidential, so you may not able to run our jupyter notebook for each file directly.
