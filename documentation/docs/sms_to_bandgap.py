@@ -31,7 +31,7 @@ def sms_bandgap(sms):
     # Save the predictors (Pending)
     new_data = pd.DataFrame(index=[1], data=new)
 
-    with open('regressor.pickle', 'rb') as f:
+    with open('docs/regressor.pickle', 'rb') as f:
         regressor2 = pickle.load(f)
     # path and model need to rewrite
 
