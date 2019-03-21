@@ -1,8 +1,8 @@
 import sys
-sys.path.append("../PreML")
-import Random_Forest_Regression_Optimization
+sys.path.append("../ml_model/code")
+import rfr_optimization
 
 def test_rfr_optimization():
-    result = Random_Forest_Regression_Optimization.search_hyperparameter()
+    result = rfr_optimization.search_hyperparameter()
     assert result is None, "Wrong!"
     return
