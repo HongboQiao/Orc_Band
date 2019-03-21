@@ -7,7 +7,8 @@ Our overall goal of the project is to predict the bandgap and bandgap position o
 1. Calculate molecular descriptors for organic semiconductor from SMILES strings;
 2. Determine predictors for mathine learning mehthod by LASSO regression;
 3. Screen and optimization of regression model;
-4. Build a wrapping function that help user to use our model
+4. Build a wrapping function that help user to use our model.
+
 
 ### Calculation by RDkit
 [RDkit](https://www.rdkit.org/) is a very useful and opensource package which can be download very easily. By using the map calculation in the package, we can easily get thousands of descriptors from the SMILES strings. And use several methods to screen the predictors.
@@ -49,7 +50,7 @@ The Scatter Figure of the Predicted Bandgap for 4 Models are as follows.
 <img src="https://github.com/HongboQiao/Orc_Band/blob/master/documentation/image/Model_Comparison.png" width="700">
 </div>
 The calculated statistic data are as follows:
-  
+
 <br>
 
 | Error | Multiple Linear | Random Forest | Polynomial  | Neural Network |
@@ -108,7 +109,7 @@ Here is the link for [scikit-learn](https://scikit-learn.org/stable/install.html
 Keras is a high-level neural networks API, you can find the infomation [here](https://keras.io/). Since the introduction on their website is very straight forward, we don't write it here.
 
 ## Github Organization
-Our main work can be divided for 3 parts: PreML(Data Mining and Cleaning), ML_Model(Machine Learning Models), test(All test file). For each directory, we seperate the file into code(".py") and notebook(".ipynb", as a usecase for the ".py" file). 
+Our main work can be divided for 3 parts: PreML(Mchine Learning) (Data Mining and Cleaning), ML_Model(Machine Learning Models), test(All test file). For each directory, we seperate the file into code(".py") and notebook(".ipynb", as a usecase for the ".py" file).
 ```
 Orc_Band/
     orcband/
@@ -123,10 +124,10 @@ Orc_Band/
         image/
         data/
     README.md
-    UseCase.ipynb
     keras1_0.yml
     LICENSE
     setup.py
 ```
+  *Note: The example file ``usecase.ipynb`` is located in the documentation directory, it's an example about how to use it. Also, you can put your SMILES string to do the prediction.
   
   *Note: The data we use is confidential, so you may not able to run our jupyter notebook for each file directly.
