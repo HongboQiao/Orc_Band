@@ -24,6 +24,7 @@ def Random_Forest_Reg(data):
     # Predicting a new result with the Random Forest Regression
     Ytrain_Pred = regressor.predict(X_train)
     Ytest_Pred = regressor.predict(X_test)
+    RFR_score = r2_score(y_test, Ytest_Pred)
 
     # Visualising the Random Forest Regression results
     # in higher resolution and smoother curve
@@ -33,6 +34,4 @@ def Random_Forest_Reg(data):
     plt.title('$Random \ Forest \ Regression$')
     plt.xlabel('$<Eg> \ Actual \ [eV]$')
     plt.ylabel('$<Eg> \ Predict \ [eV]$')
-    plt.show()
-    RFR_score = r2_score(y_test, Ytest_Pred)
     return RFR_score
