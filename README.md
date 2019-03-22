@@ -3,10 +3,10 @@
 <div align=center> <img src="https://github.com/HongboQiao/Orc_Band/blob/master/documentation/image/Logo.jpg" width="400"> </div>
 
 ## Project Introduction
-Our overall goal of the project is to predict the bandgap of the organic semiconductors, by using Machine Leaning Method. The dataset that we use is Harvard Clean Energy Project Database. To achieve this goal, Our tasks are:
+Our overall goal of the project is to predict the bandgap of organic semiconductors with Machine Leaning Methods. The dataset that we use is Harvard Clean Energy Project Database. To achieve this goal, Our tasks are:
 1. Calculate molecular descriptors for organic semiconductor from SMILES strings;
 2. Determine predictors for mathine learning mehthod by LASSO regression;
-3. Screen and optimization of regression model;
+3. Screen and optimize regression model;
 4. Build a wrapping function that help user to use our model.
 
 
@@ -130,4 +130,4 @@ Orc_Band/
 ```
   *Note: The example file ``usecase.ipynb`` is located in the documentation directory, it's an example about how to use our model. Also, you can put your SMILES strings to the function and get their bandgap predictions.
   
-  *Note: The data we use is confidential, so you may not able to run our jupyter notebook for each file directly.
+  *Note: The data we use is confidential, so you may be not able to run our jupyter notebook directly in each file.
