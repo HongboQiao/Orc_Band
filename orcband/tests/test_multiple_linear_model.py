@@ -14,7 +14,7 @@ def test_multiple_linaer_model():
     title = plt.gca().get_title()
     xscale = plt.gca().get_xlim()
     yscale = plt.gca().get_ylim()
-    assert round(result,2) == 0.59, "Error: The code for r2 score is wrong!"
+    assert round(score,2) == 0.59, "Error: The code for r2 score is wrong!"
     assert xname == '$<Eg> \\ Actual \\ [eV]$', "The figure x label is wrong!"
     assert yname == '$<Eg> \\ Predict \\ [eV]$', "The figure y label is wrong!"
     assert title == '$Multiple \\ Linear \\ Regression$', "The figure title is wrong!"
