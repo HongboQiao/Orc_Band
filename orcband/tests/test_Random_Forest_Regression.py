@@ -17,7 +17,7 @@ def test_Random_Forest_Reg():
     assert xname == '$<Eg> \\ Actual \\ [eV]$', "The figure x label is wrong!"
     assert yname == '$<Eg> \\ Predict \\ [eV]$', "The figure y label is wrong!"
     assert title == '$Random \\ Forest \\ Regression$', "The figure title is wrong!"
-    assert xscale[0] == -0.2 and xmin[1] == 4.2, "The range of x is wrong!"
-    assert yscale[0] == -0.2 and xmin[1] == 4.2, "The range of y is wrong!"
+    assert xscale[0] == -0.2 and xscale[1] == 4.2, "The range of x is wrong!"
+    assert yscale[0] == -0.2 and xscale[1] == 4.2, "The range of y is wrong!"
     
     return
