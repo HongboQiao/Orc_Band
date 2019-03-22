@@ -18,7 +18,7 @@ def test_Polynomial_Model():
 def test_Random_Forest_Model():
     data = pd.read_csv('../documentation/data/DescriptorsDataset.csv')
     score2 = machine_learning_model.Random_Forest_Model(data)
-    assert score2 > 0.7, "should be larger than 0.7"
+    assert round(score2,2) == 0.7, "Error: The function is not right"
     return
 
 def test_Neural_Network_Model():
