@@ -37,7 +37,6 @@ def Polynomial_Model(data):
     plt.title('$Polynomial \ Regression$')
     plt.xlabel('$<Eg> \ Actual \ [eV]$')
     plt.ylabel('$<Eg> \ Predict \ [eV]$')
-    plt.show()
     print('The score of this regression in this case is: ',
           PLMscore)
 
