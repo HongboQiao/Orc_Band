@@ -39,9 +39,9 @@ def Multiple_Linear_Model(data):
     plt.scatter(Y_train, Train_Predictions, color='blue')
     plt.scatter(Y_test, Test_Predictions, color='r')
     plt.plot([0, 4], [0, 4], lw=4, color='black')
-    plt.title('Multipler linear Regression Results')
-    plt.xlabel('Actual BandGap')
-    plt.ylabel('Predicted BandGap')
+    plt.title('$Multiple \ Linear \ Regression$')
+    plt.xlabel('$<Eg> \ Actual \ [eV]$')
+    plt.ylabel('$<Eg> \ Predict \ [eV]$')
     plt.show()
 
     print('The score of this regression in this case is: ', MLRscore)
@@ -75,9 +75,9 @@ def Polynomial_Model(data):
     plt.scatter(Y_train, Ytrain_Pred, color='blue')
     plt.scatter(Y_test, Ytest_Pred, color='red')
     plt.plot([0, 4], [0, 4], lw=4, color='black')
-    plt.title('(Polynomial Regression)')
-    plt.xlabel('Actual BandGap')
-    plt.ylabel('Predicted BandGap')
+    plt.title('$Polynomial \ Regression$')
+    plt.xlabel('$<Eg> \ Actual \ [eV]$')
+    plt.ylabel('$<Eg> \ Predict \ [eV]$')
     plt.show()
     print('The score of this regression in this case is: ', PLMscore)
 
@@ -107,10 +107,9 @@ def Random_Forest_Model(data):  # Pending
     plt.scatter(Y_train, Ytrain_Pred, color='blue')
     plt.scatter(Y_test, Ytest_Pred, color='red')
     plt.plot([0, 4], [0, 4], lw=4, color='black')
-    plt.title('Random Forest Regression Results')
-    plt.xlabel('Actual Bandgap')
-    plt.ylabel('Predicted Bandgap')
-    plt.show()
+    plt.title('$Random \ Forest \ Regression$')
+    plt.xlabel('$<Eg> \ Actual \ [eV]$')
+    plt.ylabel('$<Eg> \ Predict \ [eV]$')
 
     # Score of the Model
     print('The score of this regression in this case is: ',
@@ -119,44 +118,53 @@ def Random_Forest_Model(data):  # Pending
     return RFMscore
 
 
-def Neural_Network_Model(data):  # TensorFlow Needed
-    """Model for Random Forest Model"""
-    # Choose the Predictors
-    X = data[['AXp-0d', 'AXp-1d', 'AXp-2d',
-             'ETA_eta_L', 'ETA_epsilon_3']].values
+
+def neural_network_model(data):
+    """Neural net work model"""
+    X = data[['AXp-0d', 'AXp-1d', 'AXp-2d', 'ETA_eta_L',
+              'ETA_epsilon_3']].values
     Y = data[['e_gap_alpha']].values
-    X_train, X_test, Y_train, Y_test = train_test_split(
-                                       X, Y, test_size=.25, random_state=1234)
+    X_train_pn, X_test_pn, y_train, y_test = train_test_split(X, Y,
+                                                              test_size=0.25,
+                                                              random_state=1234
+                                                              )
+    # create the scaler from the training data only and keep it for later use
+    X_train_scaler = StandardScaler().fit(X_train_pn)
+    # apply the scaler transform to the training data
+    X_train = X_train_scaler.transform(X_train_pn)
+    X_test = X_train_scaler.transform(X_test_pn)
 
     def neural_model():
-        """Submodel of Neural Network Model"""
         # assemble the structure
         model = Sequential()
         model.add(Dense(5, input_dim=5, kernel_initializer='normal',
-                  activation='relu', kernel_regularizer=regularizers.l2(0.01)))
+                        activation='relu',
+                        kernel_regularizer=regularizers.l2(0.01)))
         model.add(Dense(8, kernel_initializer='normal', activation='relu',
-                  kernel_regularizer=regularizers.l2(0.01)))
+                        kernel_regularizer=regularizers.l2(0.01)))
+        model.add(Dense(20, kernel_initializer='normal', activation='relu',
+                        kernel_regularizer=regularizers.l2(0.01)))
+        # model.add(Dense(4, kernel_initializer='normal',activation='relu'))
         model.add(Dense(1, kernel_initializer='normal'))
-    # compile the model
+        # compile the model
         model.compile(loss='mean_squared_error', optimizer='adam')
         return model
-
-    # Model
+    # initialize the andom seed as this is used to generate
+    # the starting weights
+    np.random.seed(1234)
+    # create the NN framework
     estimator = KerasRegressor(build_fn=neural_model,
                                epochs=1200, batch_size=25000, verbose=0)
-    history = estimator.fit(X_train, Y_train, validation_split=0.33,
+    history = estimator.fit(X_train, y_train, validation_split=0.33,
                             epochs=1200, batch_size=10000, verbose=0)
+    print("final MSE for train is %.2f and for validation is %.2f" %
+          (history.history['loss'][-1], history.history['val_loss'][-1]))
+    plt.figure(figsize=(5, 5))
     prediction = estimator.predict(X_test)
-    NNMscore = r2_score(Y_test, prediction)
-
-    # Figure
-    figure = plt.figure()
-    plt.scatter(Y_train, estimator.predict(X_train), color='blue')
-    plt.scatter(Y_test, prediction, color='red')
-    plt.xlim(0, 4)
-    plt.ylim(0, 4)
+    plt.scatter(y_train, estimator.predict(X_train), color='blue')
+    plt.scatter(y_test, prediction, color='red')
     plt.plot([0, 4], [0, 4], lw=4, color='black')
-    print('The score of this regression in this case is: ',
-          NNMscore)
-
-    return NNMscore  # Picture Varies every time
+    plt.title('$Neural \ Network \ Model$')
+    plt.xlabel('$<Eg> \ Actual \ [eV]$')
+    plt.ylabel('$<Eg> \ Predict \ [eV]$')
+    return r2_score(y_test, prediction)
