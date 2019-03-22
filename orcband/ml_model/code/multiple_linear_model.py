@@ -24,12 +24,11 @@ def Multiple_Linear_Model(data):
     MLR.fit(X_train, y_train)
     testpred = MLR.predict(X_test)
     trainpred = MLR.predict(X_train)
+    MLR_score = r2_score(y_test, testpred)
     plt.scatter(y_train, trainpred, color='blue')
     plt.scatter(y_test, testpred, color='r')
     plt.plot([0, 4], [0, 4], lw=4, color='black')
     plt.title('$Multiple \ Linear \ Regression$')
     plt.xlabel('$<Eg> \ Actual \ [eV]$')
     plt.ylabel('$<Eg> \ Predict \ [eV]$')
-    plt.show()
-    MLR_score = r2_score(y_test, testpred)
     return MLR_score
