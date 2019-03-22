@@ -2,6 +2,7 @@ import sys
 sys.path.append("../ml_model/code")
 import random_forest_regression_model
 import pandas as pd
+import matplotlib.pyplot as plt
 
 def test_Random_Forest_Reg():
     """This function is to test random forest regression code"""
