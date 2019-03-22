@@ -112,6 +112,10 @@ Keras is a high-level neural networks API, you can find the infomation [here](ht
 Our main work can be divided for 3 parts: datamining(Data Mining and Cleaning), ml_model(Machine Learning Models), tests(All test file). For each directory, we seperate the files into code(".py") and notebook(".ipynb", which is a usecase for the ".py" file).
 ```
 Orc_Band/
+    documentation/
+        data/
+        docs/
+        image/
     orcband/
         datamining/
             code/
@@ -120,10 +124,7 @@ Orc_Band/
             code/
             notebook/
         tests/
-    documentation/
-        image/
-        data/
-    README.md
+     README.md
     keras1_0.yml
     LICENSE
     setup.py
