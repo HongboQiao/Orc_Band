@@ -5,7 +5,7 @@ import sys
 from setuptools import setup, find_packages
 
 install_requires = [
-    "mordred==1.1.1*",
+    "mordred",
     "numpy",
     "pandas",
     "scikit-learn"
