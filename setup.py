@@ -8,8 +8,8 @@ install_requires = [
     "mordred==1.1.1*",
     "numpy",
     "pandas",
-    "scikit-learn",
-    "rdkit"]
+    "scikit-learn"
+]
 
 README_md = ""
 fndoc = os.path.join(os.path.dirname(__file__), "README.md")
