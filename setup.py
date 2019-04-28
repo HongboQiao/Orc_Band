@@ -1,10 +1,32 @@
+import io
+import os
 import sys
-sys.path.insert(0, "Organic-Semi/Documents")
-import SMS_BandGap
 
-sms = input("Please Input a SMILES String: ")
+from setuptools import setup, find_packages
 
-BG = SMS_BandGap.sms_bandgap(sms)
+install_requires = [
+    "mordred==1.1.1*",
+    "numpy==1.*",
+    "pandas",
+    "scikit-learn==0.20.2",
+    "rdkit"]
 
-print("The Predictied Band Gap is: ", BG)
-EXIT01 = input('Please Press Enter to Exit')
+
+
+
+
+setup(
+    name="Orc_Band",
+    version="1.0.0",
+    description="predict organic bandgap",
+    long_description=README.md,
+    license="MIT",
+    author="Yuhuan Meng, Liang Xu, Zhi Peng, Hongbo Qiao",
+    author_email="xuliang1@uw.edu",
+    url="https://github.com/HongboQiao/Orc_Band",
+    platforms=["any"],
+    keywords="Bandgap Prediction",
+    packages=find_packages(),
+    install_requires=install_requires,
+    cmdclass={"test": None},
+)
