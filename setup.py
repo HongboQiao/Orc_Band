@@ -6,11 +6,15 @@ from setuptools import setup, find_packages
 
 install_requires = [
     "mordred==1.1.1*",
-    "numpy==1.*",
+    "numpy",
     "pandas",
-    "scikit-learn==0.20.2",
+    "scikit-learn",
     "rdkit"]
 
+README_md = ""
+fndoc = os.path.join(os.path.dirname(__file__), "README.md")
+with io.open(fndoc, mode="r", encoding="utf-8") as fd:
+    README_md = fd.read()
 
 
 
