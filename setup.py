@@ -23,7 +23,7 @@ setup(
     name="Orc_Band",
     version="1.0.0",
     description="predict organic bandgap",
-    long_description=README.md,
+    long_description=README_md,
     license="MIT",
     author="Yuhuan Meng, Liang Xu, Zhi Peng, Hongbo Qiao",
     author_email="xuliang1@uw.edu",
